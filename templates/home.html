@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <h1>Welcome to the Architech Blog!!!!!!!</h1>
+
+    <div>
+        <div>
+            <p>New User? Please <a href="{% url 'register' %}">Register</a></p>
+            <p>Already a user? Please <a href="{% url 'login' %}">Login</a></p>
+        </div>       
+    </div>
+{% endblock %}

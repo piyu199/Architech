@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <h1>Post</h1>
+    {% for message in messages %}
+        <h5>{{ message }}</h5>
+    {% endfor %}
+    <ul>
+    {% for blog in blogs %}
+        <li><a href="{% url 'article' blog.pk %}">{{ blog.title }}</a>
+            <div class="container">
+                <p>{{ blog.body }}</p>
+            </div>
+            
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+    {% block title %}
+        Add Blog!
+    {% endblock %}
+    {% block content %}
+        <h1>Add Blog!</h1>
+        <div class='container'>
+            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="mb-3 pt-5"> 
+                        <label for="title">Title: </label>
+                        <input class="form-control" type="text" name="title" id="title" Required>
+                    </div>
+                    <div class="mb-3 pt-5"> 
+                        <label for="body">Content : </label>
+                        <textarea id="" class="form-control" name="content" rows="4" cols="50" Required>
+                        </textarea>
+                    </div>
+                    <div class="mb-3 pt-5">
+                        <label for='photo'>Blog_Photo:</label>
+                        <input type="file" name="photo" id="blog_photo" accept='image/*' Required>
+                    </div>
+                    <hr>
+                    <div style="clear: both;">
+                    <button type="submit" class="btn btn-success submitButton">Submit</button>
+                    </div>
+                </div>
+            </form>
+    {% endblock %}
+
+
+    
