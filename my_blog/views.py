@@ -58,6 +58,10 @@ def update(request,pk):
             blog.save()
             messages.info(request,"Created Successfully.")
             return redirect('blog_home')
+        else:
+            blog.save()
+            messages.info(request,"Created Successfully.")
+            return redirect('blog_home')
     else:
         blog=BlogPost.objects.get(pk=pk)
         context={
